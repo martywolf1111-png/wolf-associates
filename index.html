@@ -76,6 +76,40 @@
 
     .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
 
+    /* ── HAMBURGER MENU ── */
+    .hamburger {
+      display: none;
+      width: 30px;
+      height: 20px;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 101;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--gold);
+      transition: all 0.3s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translateY(12px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-12px);
+    }
+
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
@@ -535,15 +569,11 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 100px; left: 0; right: 0; background: rgba(10,10,10,0.98); padding: 2rem 1.5rem; gap: 1.5rem; width: 100%; z-index: 99; }
+      .hamburger { display: flex; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 90px; left: 0; right: 0; background: rgba(10,10,10,0.98); padding: 2rem 1.5rem; gap: 1.5rem; width: 100%; z-index: 99; }
       .nav-links.active { display: flex; }
       .nav-links li { width: 100%; }
       .nav-links a { display: block; padding: 1rem; border-bottom: 1px solid rgba(201,168,76,0.2); }
-      .hamburger { display: flex; width: 30px; height: 20px; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0; z-index: 101; }
-      .hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(12px); }
-      .hamburger.active span:nth-child(2) { opacity: 0; }
-      .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-12px); }
-      .hamburger span { display: block; width: 100%; height: 3px; background: var(--gold); transition: all 0.3s; }
       .hero { padding: 7rem 1.5rem 3rem; }
       section { padding: 4rem 1.5rem; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
