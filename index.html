@@ -568,22 +568,132 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; display: flex !important; justify-content: space-between; align-items: center; margin-top: 30px; }
-      .hamburger { display: flex !important; }
-      .logo-img { height: 50px; }
-      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 120px; left: 0; right: 0; background: rgba(10,10,10,0.99); padding: 2rem 1.5rem; gap: 1rem; width: 100%; z-index: 99; }
-      .nav-links.active { display: flex !important; }
-      .nav-links li { width: 100%; }
-      .nav-links a { display: block; padding: 1rem 0; color: var(--white); border-bottom: 1px solid rgba(201,168,76,0.2); }
-      .nav-links a:last-child { border-bottom: none; }
-      .nav-cta { width: 100%; text-align: center; background: var(--gold) !important; padding: 1rem !important; margin-top: 1rem; }
-      .hero { padding: 7rem 1.5rem 3rem; }
-      section { padding: 4rem 1.5rem; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .benefits-list { grid-template-columns: 1fr; }
-      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
-      .hero-states { gap: 1.5rem; flex-wrap: wrap; }
+      /* Show hamburger on mobile */
+      .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        gap: 6px;
+        width: 28px;
+        height: auto;
+        padding: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 102;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: var(--gold);
+        transition: all 0.3s ease;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(10px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-10px);
+      }
+
+      /* Hide/Show nav menu on mobile */
+      nav {
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 120px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 10, 0.99);
+        padding: 2rem 1.5rem;
+        gap: 0;
+        width: 100%;
+        z-index: 99;
+        list-style: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 1.2rem 0;
+        color: var(--white);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+
+      .nav-links li:last-child a {
+        border-bottom: none;
+      }
+
+      .nav-cta {
+        background: var(--gold);
+        color: var(--black) !important;
+        padding: 1rem;
+        text-align: center;
+        margin-top: 1rem;
+        display: block;
+      }
+
+      /* Rest of mobile styles */
+      .hero {
+        padding: 7rem 1.5rem 3rem;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .benefits-list {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 2rem 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-states {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
     }
   </style>
 </head>
