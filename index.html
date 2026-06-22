@@ -99,6 +99,35 @@
       opacity: 0.7;
     }
 
+    .video-play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: rgba(201, 168, 76, 0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .video-play-button.show {
+      opacity: 1;
+    }
+
+    .video-play-button::after {
+      content: '▶';
+      color: #0A0A0A;
+      font-size: 32px;
+      margin-left: 4px;
+    }
+
     .hero-overlay {
       position: absolute;
       top: 0;
@@ -541,10 +570,11 @@
 
   <!-- HERO -->
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%230A0A0A'/%3E%3C/svg%3E">
       <source src="hero-video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+    <div class="video-play-button" id="videoPlayBtn"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Advocate &middot; Protect &middot; Achieve</p>
@@ -817,6 +847,40 @@
       Attorney Advertising. Prior results do not guarantee a similar outcome. Wolf & Associates PLLC is licensed to practice law in New York, New Jersey, and Florida. The information on this website is for general informational purposes only and does not constitute legal advice.
     </p>
   </footer>
+
+  <script>
+    // Mobile video autoplay handling
+    const video = document.querySelector('.hero-video');
+    const playBtn = document.getElementById('videoPlayBtn');
+
+    // Check if autoplay failed (show play button on mobile)
+    video.addEventListener('play', function() {
+      playBtn.classList.remove('show');
+    });
+
+    // If video doesn't autoplay (common on mobile), show play button after 2 seconds
+    setTimeout(() => {
+      if (video.paused) {
+        playBtn.classList.add('show');
+      }
+    }, 2000);
+
+    // Play button click handler
+    playBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      video.play().catch(err => {
+        console.log('Video play failed:', err);
+      });
+      playBtn.classList.remove('show');
+    });
+
+    // For iOS - attempt to play on user interaction
+    document.addEventListener('touchstart', function() {
+      if (video.paused) {
+        video.play().catch(err => console.log('Autoplay blocked'));
+      }
+    }, { once: true });
+  </script>
 
 </body>
 </html>
