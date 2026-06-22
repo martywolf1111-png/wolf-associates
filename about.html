@@ -42,10 +42,124 @@
     footer p { font-size: 0.75rem; color: var(--gray); }
     footer a { color: var(--gold); text-decoration: none; }
     .footer-disclaimer { font-size: 0.68rem; color: rgba(136,136,128,0.6); max-width: 600px; line-height: 1.6; margin-top: 1rem; width: 100%; }
-    @media (max-width: 900px) { 
-      nav { padding: 1rem 1.5rem; } 
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      width: 32px;
+      height: auto;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 200;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 32px;
+      height: 3px;
+      background: var(--gold);
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translateY(10px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-10px);
+    }
+
+    /* Mobile menu */
+    #navMenu {
+      display: none;
+    }
+
+    #navMenu.active {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: rgba(10, 10, 10, 0.99);
+      padding: 2rem 1.5rem;
+      gap: 0;
+      z-index: 199;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      width: 100%;
+    }
+
+    #navMenu.active li {
+      width: 100%;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+
+    #navMenu.active a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    @media (min-width: 901px) {
+      .nav-links {
+        display: flex !important;
+      }
+
+      .hamburger {
+        display: none !important;
+      }
+    } 
+      /* Hide phone strip on mobile */
+      div[style*="background:var(--gold)"][style*="position:fixed"] {
+        display: none !important;
+      }
+      
+      nav { padding: 1rem 1.5rem; margin-top: 0; } 
       .nav-links { display: none; } 
-      .page-hero { padding: 7rem 1.5rem 3rem; background-size: contain !important; background-position: center bottom !important; min-height: 80vh; }
+      .hamburger { display: flex; z-index: 201; }
+      
+      .page-hero { 
+        padding: 6rem 1.5rem 3rem; 
+        background-size: contain !important; 
+        background-position: center bottom !important; 
+        min-height: 70vh;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      
+      .page-hero > div {
+        text-align: left !important;
+      }
+      
+      .page-hero h1 {
+        text-align: left !important;
+      }
+      
+      .page-hero .btn-primary {
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        padding: 0.5rem 0.8rem !important;
+        font-size: 0.65rem !important;
+        z-index: 150;
+        white-space: nowrap;
+      }
+      
+      .page-hero p {
+        text-align: left !important;
+      }
+      
       section { padding: 3rem 1.5rem; } 
       footer { padding: 2rem 1.5rem; flex-direction: column; } 
     }
@@ -53,28 +167,32 @@
 </head>
 <body>
   <!-- PHONE STRIP -->
-  <div style="background:var(--gold); color:var(--black); text-align:center; padding:0.4rem 1rem; font-family:Inter,sans-serif; font-size:0.78rem; font-weight:600; letter-spacing:0.08em; position:fixed; top:0; left:0; right:0; z-index:200;">
+  <div id="phone-strip" style="background:var(--gold); color:var(--black); text-align:center; padding:0.4rem 1rem; font-family:Inter,sans-serif; font-size:0.78rem; font-weight:600; letter-spacing:0.08em; position:fixed; top:0; left:0; right:0; z-index:200;">
     📞 &nbsp;<strong>Manhattan:</strong> <a href="tel:+12126081660" style="color:var(--black); text-decoration:none;">(212) 608-1660</a> &nbsp;·&nbsp; 225 Broadway, Suite 3010, New York, NY 10007 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Brooklyn:</strong> <a href="tel:+17184449653" style="color:var(--black); text-decoration:none;">(718) 444-WOLF</a> &nbsp;·&nbsp; 2917 Avenue J, 2nd Floor, Brooklyn, NY 11210 &nbsp;&nbsp;|&nbsp;&nbsp; <a href="mailto:mwolf@martinwolflaw.com" style="color:var(--black); text-decoration:none;">mwolf@martinwolflaw.com</a>
   </div>
 
 <nav>
   <a href="index.html"><img src="wolf-logo.png" alt="Wolf & Associates PLLC" class="logo-img"/></a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navMenu">
     <li><a href="personal-injury.html">Personal Injury</a></li>
     <li><a href="trusts-estates.html">Trusts & Estates</a></li>
     <li><a href="corporate.html">Corporate</a></li>
     <li><a href="real-estate.html">Real Estate</a></li>
     <li><a href="case-results.html">Case Results</a></li>
     <li><a href="about.html" style="color:var(--gold)">About</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Consultation</a></li>
   </ul>
+
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
 
 <div class="page-hero" style="background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 100%), url('martin-wolf-headshot.png') left bottom/contain no-repeat; display: flex; align-items: center; justify-content: flex-end; padding-right: 8rem; padding-top: 0; min-height: 100vh;">
   <div style="max-width: 600px;">
     <p class="breadcrumb" style="text-align: right; color: var(--gold);">Founding Attorney</p>
     <h1 style="text-align: right; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; line-height: 1.2;">Martin Wolf, <em style="font-style: italic; color: var(--gold);">Esq.</em></h1>
-    <p style="color: #E8C96A; text-align: right; font-size: 1.1rem; margin-bottom: 2rem; font-weight: 300;">Experienced & Trusted Legal Representation</p>
     <div style="text-align: right;">
       <a href="#contact" class="btn-primary" style="display: inline-block;">Schedule a Consultation</a>
     </div>
@@ -195,6 +313,27 @@
   </div>
   <p class="footer-disclaimer">Attorney Advertising. Prior results do not guarantee a similar outcome. Wolf & Associates PLLC is licensed to practice law in New York, New Jersey, and Florida. The information on this website is for general informational purposes only and does not constitute legal advice.</p>
 </footer>
+
+<script>
+  // Mobile hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+
+  if (hamburger) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+  }
+</script>
 
 </body>
 </html>
