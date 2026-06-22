@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal Injury Attorneys | Wolf & Associates PLLC | NY · NJ · FL (Pending)</title>
+  <meta name="description" content="Wolf & Associates PLLC — Aggressive personal injury representation across New York, New Jersey, and Florida. Car accidents, construction accidents, slip and fall, and more. No fee unless we win."/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --black: #0A0A0A; --gold: #C9A84C; --gold-light: #E8C96A;
+      --white: #F8F6F0; --gray: #888880; --dark-gray: #1A1A1A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.7; }
+    .logo-img { height: 72px; width: auto; object-fit: contain; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem; margin-top: 30px; background: rgba(10,10,10,0.95);
+      border-bottom: 1px solid rgba(201,168,76,0.2); backdrop-filter: blur(10px);
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: var(--white); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--black) !important; padding: 0.55rem 1.4rem; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+
+    /* HERO */
+    .page-hero {
+      min-height: 50vh; display: flex; flex-direction: column; justify-content: center;
+      padding: 10rem 4rem 5rem; background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+      border-bottom: 1px solid rgba(201,168,76,0.15); position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '⚖'; position: absolute; right: 2rem; top: 50%; transform: translateY(-50%);
+      font-size: 30vw; color: rgba(201,168,76,0.03); pointer-events: none;
+    }
+    .breadcrumb { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--gray); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--gold); }
+    .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 600; line-height: 1.1; margin-bottom: 1.5rem; max-width: 700px; }
+    .page-hero h1 em { font-style: italic; color: var(--gold); }
+    .page-hero p { color: var(--gray); max-width: 580px; font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; }
+    .no-fee { display: inline-flex; align-items: center; gap: 0.8rem; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); padding: 0.8rem 1.5rem; color: var(--gold); font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+
+    /* SECTIONS */
+    section { padding: 5rem 4rem; }
+    .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 500; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 600; line-height: 1.15; margin-bottom: 1.5rem; }
+    .gold-rule { width: 60px; height: 2px; background: var(--gold); margin-bottom: 2rem; }
+    .section-body { color: var(--gray); max-width: 680px; line-height: 1.9; }
+
+    /* SUB AREAS GRID */
+    .sub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: rgba(201,168,76,0.1); margin-top: 3rem; border: 1px solid rgba(201,168,76,0.1); }
+    .sub-card { background: var(--black); padding: 2.5rem; transition: background 0.3s; position: relative; overflow: hidden; }
+    .sub-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.4s; }
+    .sub-card:hover { background: var(--dark-gray); }
+    .sub-card:hover::after { width: 100%; }
+    .sub-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .sub-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 0.8rem; color: var(--white); }
+    .sub-card p { font-size: 0.86rem; color: var(--gray); line-height: 1.8; }
+    .sub-card a { display: inline-block; margin-top: 1rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); text-decoration: none; font-weight: 500; }
+    .sub-card a:hover { color: var(--gold-light); }
+
+    /* WHY US */
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+    .why-item { border-left: 2px solid var(--gold); padding-left: 1.5rem; }
+    .why-item h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .why-item p { font-size: 0.85rem; color: var(--gray); line-height: 1.7; }
+
+    /* CTA */
+    .cta-section { background: var(--dark-gray); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); text-align: center; }
+    .btn-primary { background: var(--gold); color: var(--black); padding: 1rem 2.5rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.3s; border: none; cursor: pointer; font-family: inherit; }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-outline { border: 1px solid rgba(201,168,76,0.5); color: var(--gold); padding: 1rem 2.5rem; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.3s; margin-left: 1rem; }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+
+    /* FOOTER */
+    footer { background: var(--black); border-top: 1px solid rgba(201,168,76,0.15); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    footer p { font-size: 0.75rem; color: var(--gray); }
+    footer a { color: var(--gold); text-decoration: none; }
+    .footer-disclaimer { font-size: 0.68rem; color: rgba(136,136,128,0.6); max-width: 600px; line-height: 1.6; margin-top: 1rem; width: 100%; }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
+      .page-hero { padding: 7rem 1.5rem 3rem; } section { padding: 3rem 1.5rem; }
+      .why-grid { grid-template-columns: 1fr; } footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <!-- PHONE STRIP -->
+  <div style="background:var(--gold); color:var(--black); text-align:center; padding:0.4rem 1rem; font-family:Inter,sans-serif; font-size:0.78rem; font-weight:600; letter-spacing:0.08em; position:fixed; top:0; left:0; right:0; z-index:200;">
+    📞 &nbsp;<strong>Manhattan:</strong> <a href="tel:+12126081660" style="color:var(--black); text-decoration:none;">(212) 608-1660</a> &nbsp;·&nbsp; 225 Broadway, Suite 3010, New York, NY 10007 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Brooklyn:</strong> <a href="tel:+17184449653" style="color:var(--black); text-decoration:none;">(718) 444-WOLF</a> &nbsp;·&nbsp; 2917 Avenue J, 2nd Floor, Brooklyn, NY 11210 &nbsp;&nbsp;|&nbsp;&nbsp; <a href="mailto:mwolf@martinwolflaw.com" style="color:var(--black); text-decoration:none;">mwolf@martinwolflaw.com</a>
+  </div>
+
+
+<nav>
+  <a href="index.html"><img src="wolf-logo.png" alt="Wolf & Associates PLLC" class="logo-img"/></a>
+  <ul class="nav-links">
+    <li><a href="personal-injury.html" style="color:var(--gold)">Personal Injury</a></li>
+    <li><a href="trusts-estates.html">Trusts & Estates</a></li>
+    <li><a href="corporate.html">Corporate</a></li>
+    <li><a href="real-estate.html">Real Estate</a></li>
+    <li><a href="case-results.html">Case Results</a></li>
+      <li><a href="index.html#counsel">Of Counsel</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Free Consultation</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;·&nbsp; Personal Injury</p>
+  <h1>We Fight Hard.<br/>You <em>Deserve</em> Maximum Compensation.</h1>
+  <p>When you've been injured through someone else's negligence, Wolf & Associates PLLC delivers aggressive, results-driven representation across New York, New Jersey, and Florida. We don't get paid unless you do.</p>
+  <span class="no-fee">⚖️ &nbsp; No Fee Unless We Win — Ever</span>
+</div>
+
+<!-- SUB PRACTICE AREAS -->
+<section>
+  <p class="section-eyebrow">Practice Areas</p>
+  <div class="gold-rule"></div>
+  <h2 class="section-title">Personal Injury — All Case Types</h2>
+  <p class="section-body">We handle the full spectrum of personal injury matters. Whatever the cause of your injury, our attorneys have the experience and resources to build the strongest possible case on your behalf.</p>
+
+  <div class="sub-grid">
+
+    <div class="sub-card">
+      <span class="sub-icon">🚗</span>
+      <h3>Car & Motor Vehicle Accidents</h3>
+      <p>Rear-end collisions, head-on crashes, drunk driving, distracted driving, and multi-vehicle accidents. We fight insurance companies to recover full compensation for your injuries, lost wages, and pain and suffering.</p>
+      <a href="index.html#contact">Get a Free Case Review →</a>
+    </div>
+
+    <div class="sub-card">
+      <span class="sub-icon">🏗️</span>
+      <h3>Construction Accidents</h3>
+      <p>Scaffold falls, crane collapses, electrocutions, and equipment accidents. New York Labor Law §240 and §241 provide powerful protections for injured construction workers — we know how to use them.</p>
+      <a href="index.html#contact">Get a Free Case Review →</a>
+    </div>
+
+    <div class="sub-card">
+      <span class="sub-icon">🚶</span>
+      <h3>Trip & Fall</h3>
+      <p>Uneven sidewalks, broken pavement, defective flooring, poor lighting, and dangerous staircases. Property owners have a duty to maintain safe conditions — when they fail, we hold them accountable.</p>
+      <a href="index.html#contact">Get a Free Case Review →</a>
+    </div>
+
+    <div class="sub-card">
+      <span class="sub-icon">🧊</span>
+      <h3>Slip & Fall</h3>
+      <p>Wet floors, icy walkways, spilled substances, and unmarked hazards in stores, restaurants, and public spaces. We investigate thoroughly and pursue maximum recovery from negligent property owners.</p>
+      <a href="index.html#contact">Get a Free Case Review →</a>
+    </div>
+
+    <div class="sub-card">
+      <span class="sub-icon">🚛</span>
+      <h3>Truck & Commercial Vehicle Accidents</h3>
+      <p>Collisions involving tractor-trailers, delivery trucks, and commercial vehicles. These cases involve complex federal regulations and multiple liable parties — we have the resources to take them on.</p>
+      <a href="index.html#contact">Get a Free Case Review →</a>
+    </div>
+
+    <div class="sub-card">
+      <span class="sub-icon">🏍️</span>
+      <h3>Motorcycle Accidents</h3>
+      <p>Motorcyclists are among the most vulnerable road users. When negligent drivers cause serious injuries, we pursue aggressive compensation for medical bills, lost income, and long-term rehabilitation.</p>
+      <a href="index.html#contact">Get a Free Case Review →</a>
+    </div>
+
+    <div class="sub-card">
+      <span class="sub-icon">🚲</span>
+      <h3>Bicycle & Pedestrian Accidents</h3>
+      <p>Cyclists and pedestrians struck by vehicles face devastating injuries. We fight against drivers, municipalities, and insurers to ensure you receive every dollar you are entitled to.</p>
+      <a href="index.html#contact">Get a Free Case Review →</a>
+    </div>
+
+    <div class="sub-card">
+      <span class="sub-icon">🏥</span>
+      <h3>Medical Malpractice</h3>
+      <p>Surgical errors, misdiagnosis, medication mistakes, and birth injuries. When medical professionals fail their duty of care, we work with leading medical experts to prove negligence and recover damages.</p>
+      <a href="index.html#contact">Get a Free Case Review →</a>
+    </div>
+
+    <div class="sub-card">
+      <span class="sub-icon">🐕</span>
+      <h3>Dog Bites & Animal Attacks</h3>
+      <p>New York, New Jersey, and Florida (Pending) all impose liability on dog owners for attacks. We handle bites, maulings, and related injuries — including scarring, infection, and emotional trauma claims.</p>
+      <a href="index.html#contact">Get a Free Case Review →</a>
+    </div>
+
+    <div class="sub-card">
+      <span class="sub-icon">💊</span>
+      <h3>Defective Products</h3>
+      <p>Dangerous pharmaceuticals, defective vehicles, unsafe consumer products, and faulty medical devices. We pursue manufacturers, distributors, and retailers for injuries caused by defective goods.</p>
+      <a href="index.html#contact">Get a Free Case Review →</a>
+    </div>
+
+    <div class="sub-card">
+      <span class="sub-icon">🏢</span>
+      <h3>Premises Liability</h3>
+      <p>Negligent security, elevator accidents, swimming pool injuries, and building code violations. Property owners and managers must keep their premises safe — we enforce that obligation.</p>
+      <a href="index.html#contact">Get a Free Case Review →</a>
+    </div>
+
+    <div class="sub-card">
+      <span class="sub-icon">✝️</span>
+      <h3>Wrongful Death</h3>
+      <p>When negligence takes a life, families deserve justice. We pursue wrongful death claims with compassion and determination, fighting for full compensation for your family's devastating loss.</p>
+      <a href="index.html#contact">Get a Free Case Review →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY WOLF -->
+<section style="background: var(--dark-gray);">
+  <p class="section-eyebrow">Why Wolf & Associates</p>
+  <div class="gold-rule"></div>
+  <h2 class="section-title">What Sets Us Apart</h2>
+  <div class="why-grid">
+    <div class="why-item">
+      <h4>No Fee Unless We Win</h4>
+      <p>You pay nothing unless we recover compensation for you. We front all costs and only get paid when you do.</p>
+    </div>
+    <div class="why-item">
+      <h4>Multi-State Reach</h4>
+      <p>Licensed in New York, New Jersey, and Florida — we handle cross-jurisdictional cases with a unified strategy.</p>
+    </div>
+    <div class="why-item">
+      <h4>Partner-Level Attention</h4>
+      <p>Every client works directly with a senior attorney from day one. No handoffs to junior staff.</p>
+    </div>
+    <div class="why-item">
+      <h4>Aggressive Negotiators</h4>
+      <p>Insurance companies know our name. We negotiate hard and aren't afraid to take cases to trial.</p>
+    </div>
+    <div class="why-item">
+      <h4>24/7 Availability</h4>
+      <p>Accidents don't keep business hours. We're available around the clock for emergency consultations.</p>
+    </div>
+    <div class="why-item">
+      <h4>Proven Results</h4>
+      <p>We have recovered substantial settlements and verdicts for injured clients across the tri-state area.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <p class="section-eyebrow" style="text-align:center;">Get Started Today</p>
+  <h2 class="section-title" style="text-align:center; margin: 0 auto 1rem;">Your Case Evaluation Is Free.<br/>Your Time Is Now.</h2>
+  <p style="color:var(--gray); text-align:center; margin-bottom:2.5rem; max-width:500px; margin-left:auto; margin-right:auto;">Don't wait. Evidence disappears and statutes of limitations are unforgiving. Contact us today for a free, no-obligation case review.</p>
+  <a href="index.html#contact" class="btn-primary">Free Case Evaluation</a>
+  <a href="tel:+12126081660" class="btn-outline">Call (212) 608-1660</a>
+</section>
+
+<footer>
+  <a href="index.html"><img src="wolf-logo.png" alt="Wolf & Associates PLLC" style="height:70px; width:auto;"/></a>
+  <div style="font-size:0.78rem; color:var(--gray);">
+    <p style="margin-bottom:0.3rem;"><strong style="color:var(--gold);">Manhattan:</strong> 225 Broadway, Suite 3010, New York, NY 10007 &nbsp;·&nbsp; <a href="tel:+12126081660" style="color:var(--gold);">(212) 608-1660</a> &nbsp;·&nbsp; Fax: (718) 228-5607</p>
+    <p style="margin-bottom:0.3rem;"><strong style="color:var(--gold);">Brooklyn:</strong> 2917 Avenue J, 2nd Floor, Brooklyn, NY 11210 &nbsp;·&nbsp; <a href="tel:+17184449653" style="color:var(--gold);">(718) 444-WOLF</a></p>
+    <p>&copy; 2026 Wolf &amp; Associates PLLC &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Disclaimer</a></p>
+  </div>
+  <p class="footer-disclaimer">Attorney Advertising. Prior results do not guarantee a similar outcome. Wolf & Associates PLLC is licensed to practice law in New York, New Jersey, and Florida. The information on this website is for general informational purposes only and does not constitute legal advice.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wolf & Associates PLLC | Personal Injury, Trusts & Estates, Real Estate & Corporate Law | NY · NJ · FL (Pending)</title>
+  <meta name="description" content="Wolf & Associates PLLC — A premier multi-state law firm specializing in Personal Injury, Trusts & Estates, Real Estate, and Corporate Law across New York, New Jersey, and Florida."/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --gold: #C9A84C;
+      --gold-light: #E8C96A;
+      --gold-dark: #A07830;
+      --white: #F8F6F0;
+      --gray: #888880;
+      --dark-gray: #1A1A1A;
+      --mid-gray: #2A2A2A;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── LOGO IMAGE ── */
+    .logo-img { height: 72px; width: auto; object-fit: contain; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4rem; margin-top: 30px;
+      background: rgba(10,10,10,0.95);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--black) !important;
+      padding: 0.55rem 1.4rem;
+      font-weight: 600 !important;
+      letter-spacing: 0.08em !important;
+      transition: background 0.3s !important;
+    }
+
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 4rem 4rem;
+      position: relative;
+      overflow: hidden;
+      background: #0A0A0A;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.7;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.5) 50%, rgba(10,10,10,0.7) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero::before {
+      content: 'W';
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40vw;
+      font-weight: 700;
+      color: rgba(201,168,76,0.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      max-width: 800px;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--gray);
+      max-width: 520px;
+      margin-bottom: 3rem;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+      padding: 1rem 2.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-outline {
+      border: 1px solid rgba(201,168,76,0.5);
+      color: var(--gold);
+      padding: 1rem 2.5rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.3s, background 0.3s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+
+    .hero-states {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      display: flex;
+      gap: 3rem;
+    }
+
+    .state-item { text-align: center; }
+    .state-item .state-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      display: block;
+    }
+    .state-item .state-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 4rem; }
+
+    .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-body {
+      color: var(--gray);
+      max-width: 600px;
+      line-height: 1.9;
+    }
+
+    .gold-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    /* ── PRACTICE AREAS ── */
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1px;
+      background: rgba(201,168,76,0.1);
+      margin-top: 4rem;
+      border: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .practice-card {
+      background: var(--black);
+      padding: 3rem 2.5rem;
+      transition: background 0.3s;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .practice-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width 0.4s ease;
+    }
+
+    .practice-card:hover { background: var(--dark-gray); }
+    .practice-card:hover::after { width: 100%; }
+
+    .practice-card.featured {
+      background: var(--dark-gray);
+      border-left: 3px solid var(--gold);
+    }
+
+    .practice-icon {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .practice-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .practice-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .practice-card p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    /* ── STATS ── */
+    .stats-section {
+      background: var(--dark-gray);
+      border-top: 1px solid rgba(201,168,76,0.15);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .stat-item {
+      padding: 3rem 2rem;
+      text-align: center;
+      border-right: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    /* ── OF COUNSEL ── */
+    .of-counsel {
+      background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+      border: 1px solid rgba(201,168,76,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .of-counsel::before {
+      content: '§';
+      position: absolute;
+      right: 4rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20rem;
+      color: rgba(201,168,76,0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .of-counsel-inner {
+      max-width: 700px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .benefits-list {
+      list-style: none;
+      margin: 2rem 0 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .benefits-list li {
+      font-size: 0.88rem;
+      color: var(--gray);
+      padding-left: 1.5rem;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .benefits-list li::before {
+      content: '—';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--dark-gray);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      margin-top: 3rem;
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .form-group label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--white);
+      padding: 0.9rem 1.1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.3s;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group select option { background: var(--dark-gray); }
+
+    .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+
+    .contact-info-item { border-left: 2px solid var(--gold); padding-left: 1.5rem; }
+
+    .contact-info-item .label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+    }
+
+    .contact-info-item p {
+      color: var(--white);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(201,168,76,0.15);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer p {
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+
+    .footer-disclaimer {
+      font-size: 0.68rem;
+      color: rgba(136,136,128,0.6);
+      max-width: 600px;
+      line-height: 1.6;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { padding: 7rem 1.5rem 3rem; }
+      section { padding: 4rem 1.5rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .benefits-list { grid-template-columns: 1fr; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+      .hero-states { gap: 1.5rem; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <!-- PHONE STRIP -->
+  <div style="background:var(--gold); color:var(--black); text-align:center; padding:0.4rem 1rem; font-family:Inter,sans-serif; font-size:0.78rem; font-weight:600; letter-spacing:0.08em; position:fixed; top:0; left:0; right:0; z-index:200;">
+    📞 &nbsp;<strong>Manhattan:</strong> <a href="tel:+12126081660" style="color:var(--black); text-decoration:none;">(212) 608-1660</a> &nbsp;·&nbsp; 225 Broadway, Suite 3010, New York, NY 10007 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Brooklyn:</strong> <a href="tel:+17184449653" style="color:var(--black); text-decoration:none;">(718) 444-WOLF</a> &nbsp;·&nbsp; 2917 Avenue J, 2nd Floor, Brooklyn, NY 11210 &nbsp;&nbsp;|&nbsp;&nbsp; <a href="mailto:mwolf@martinwolflaw.com" style="color:var(--black); text-decoration:none;">mwolf@martinwolflaw.com</a>
+  </div>
+
+
+  <!-- NAV -->
+  <nav>
+    <img src="wolf-logo.png" alt="Wolf & Associates PLLC" class="logo-img"/>
+
+    <ul class="nav-links">
+      <li><a href="personal-injury.html">Personal Injury</a></li>
+      <li><a href="trusts-estates.html">Trusts & Estates</a></li>
+      <li><a href="corporate.html">Corporate</a></li>
+      <li><a href="real-estate.html">Real Estate</a></li>
+      <li><a href="case-results.html">Case Results</a></li>
+      <li><a href="#counsel">Of Counsel</a></li>
+      <li><a href="#contact" class="nav-cta">Free Consultation</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="hero-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Advocate &middot; Protect &middot; Achieve</p>
+      <h1>When the Stakes Are High,<br/><em>Experience</em> Is Everything.</h1>
+      <p class="hero-sub">Wolf & Associates PLLC is a premier multi-state litigation and transactional firm delivering aggressive representation across Personal Injury, Trusts & Estates, Real Estate, and Corporate Law.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Free Case Evaluation</a>
+        <a href="#practice" class="btn-outline">Our Practice Areas</a>
+      </div>
+      <div class="hero-states">
+        <div class="state-item">
+          <span class="state-name">New York</span>
+          <span class="state-label">Licensed</span>
+        </div>
+        <div class="state-item">
+          <span class="state-name">New Jersey</span>
+          <span class="state-label">Licensed</span>
+        </div>
+        <div class="state-item">
+          <span class="state-name">Florida</span>
+          <span class="state-label">Pending</span>
+        </div>
+        <div class="state-item">
+          <span class="state-name">Expanding</span>
+          <span class="state-label">Nationwide</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section" style="padding: 0;">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">3</span>
+        <span class="stat-label">States Active</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">$0</span>
+        <span class="stat-label">Fee Unless We Win</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">24/7</span>
+        <span class="stat-label">Client Access</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Commitment</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICE AREAS -->
+  <section id="practice">
+    <p class="section-eyebrow">What We Do</p>
+    <div class="gold-rule"></div>
+    <h2 class="section-title">Practice Areas</h2>
+    <p class="section-body">We deliver results-driven legal strategy across four core disciplines, combining courtroom aggression with precise transactional and estate planning expertise.</p>
+
+    <div class="practice-grid">
+
+      <div class="practice-card featured">
+        <span class="practice-icon">⚖️</span>
+        <span class="practice-tag">Primary Focus</span>
+        <h3>Personal Injury</h3>
+        <p>We fight aggressively for victims of accidents, negligence, and wrongful conduct. From catastrophic injuries to wrongful death, we pursue maximum compensation across New York, New Jersey, and Florida — with zero fees unless we win.</p>
+        <a href="personal-injury.html" style="display:inline-block; margin-top:1.2rem; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); text-decoration:none; font-weight:500;">View All Case Types →</a>
+      </div>
+
+      <div class="practice-card featured">
+        <span class="practice-icon">📜</span>
+        <span class="practice-tag">Primary Focus</span>
+        <h3>Trusts & Estates</h3>
+        <p>Comprehensive estate planning, trust administration, wills, powers of attorney, and probate counsel. We help individuals and families protect generational wealth, minimize tax exposure, and ensure their legacy is preserved with precision across all three states.</p>
+        <a href="trusts-estates.html" style="display:inline-block; margin-top:1.2rem; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); text-decoration:none; font-weight:500;">View All Services →</a>
+      </div>
+
+      <div class="practice-card featured">
+        <span class="practice-icon">🏢</span>
+        <span class="practice-tag">Primary Focus</span>
+        <h3>Business & Corporate Law</h3>
+        <p>From formation and governance to complex M&A transactions and commercial disputes, we counsel businesses of all sizes with the strategic depth of a large firm and the personal attention of a boutique.</p>
+        <a href="corporate.html" style="display:inline-block; margin-top:1.2rem; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); text-decoration:none; font-weight:500;">View All Services →</a>
+      </div>
+
+      <div class="practice-card featured">
+        <span class="practice-icon">🏠</span>
+        <span class="practice-tag">Primary Focus</span>
+        <h3>Real Estate Law</h3>
+        <p>Residential and commercial transactions, title disputes, landlord-tenant matters, and development agreements. We protect your investment at every stage of the deal across tri-state markets.</p>
+        <a href="real-estate.html" style="display:inline-block; margin-top:1.2rem; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); text-decoration:none; font-weight:500;">View All Services →</a>
+      </div>
+
+      <div class="practice-card">
+        <span class="practice-icon">👨‍👩‍👧</span>
+        <span class="practice-tag">Full Service</span>
+        <h3>Family Law</h3>
+        <p>Divorce, custody, child support, and domestic matters handled with discretion and strength. We protect what matters most.</p>
+      </div>
+
+      <div class="practice-card">
+        <span class="practice-icon">🛡️</span>
+        <span class="practice-tag">Full Service</span>
+        <h3>Criminal Defense</h3>
+        <p>Aggressive defense at every level — from misdemeanor to felony. We protect your rights, your freedom, and your future.</p>
+      </div>
+
+      <div class="practice-card">
+        <span class="practice-icon">🌐</span>
+        <span class="practice-tag">Full Service</span>
+        <h3>All Other Areas</h3>
+        <p>Employment law, immigration, estate planning, civil litigation and more. Our network of attorneys ensures expert coverage across every legal need.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THE FIRM -->
+  <section id="firm" style="background: var(--dark-gray);">
+    <p class="section-eyebrow">About the Firm</p>
+    <div class="gold-rule"></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
+      <div>
+        <h2 class="section-title">A New Standard in Multi-State Legal Representation</h2>
+        <p class="section-body" style="margin-bottom: 1.5rem;">Wolf & Associates PLLC was built on a singular conviction: that clients in New York, New Jersey, and Florida deserve the power of a large firm without sacrificing direct partner access.</p>
+        <p class="section-body" style="margin-bottom: 1.5rem;">Our multi-state platform allows us to handle complex cross-jurisdictional matters seamlessly — from tri-state personal injury cases and estate plans spanning multiple states, to multi-state commercial transactions — with a unified team and consistent strategy.</p>
+        <p class="section-body">Whether you are protecting your family's legacy through trust and estate planning, recovering from a serious injury, closing a significant real estate deal, or navigating a corporate transaction, Wolf & Associates delivers partner-level attention at every stage.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 1.5rem; padding-top: 0.5rem;">
+        <div style="border-left: 2px solid var(--gold); padding-left: 1.5rem;">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--white); margin-bottom: 0.3rem;">Trusts & Estate Planning</p>
+          <p style="font-size: 0.85rem; color: var(--gray);">Multi-state estate plans, trust administration, probate, and generational wealth protection.</p>
+        </div>
+        <div style="border-left: 2px solid var(--gold); padding-left: 1.5rem;">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--white); margin-bottom: 0.3rem;">Multi-State Platform</p>
+          <p style="font-size: 0.85rem; color: var(--gray);">Seamless representation across NY, NJ & FL with a unified legal strategy.</p>
+        </div>
+        <div style="border-left: 2px solid var(--gold); padding-left: 1.5rem;">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--white); margin-bottom: 0.3rem;">Partner-Level Access</p>
+          <p style="font-size: 0.85rem; color: var(--gray);">Every client receives direct access to senior attorneys from day one.</p>
+        </div>
+        <div style="border-left: 2px solid var(--gold); padding-left: 1.5rem;">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--white); margin-bottom: 0.3rem;">Results-Driven</p>
+          <p style="font-size: 0.85rem; color: var(--gray);">Personal Injury cases handled on contingency — no fee unless we recover for you.</p>
+        </div>
+        <div style="border-left: 2px solid var(--gold); padding-left: 1.5rem;">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--white); margin-bottom: 0.3rem;">Expanding Network</p>
+          <p style="font-size: 0.85rem; color: var(--gray);">Actively growing our of-counsel network to serve clients in additional states.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OF COUNSEL -->
+  <section id="counsel" class="of-counsel">
+    <div class="of-counsel-inner">
+      <p class="section-eyebrow">For Attorneys</p>
+      <div class="gold-rule"></div>
+      <h2 class="section-title">Join the Wolf & Associates Of-Counsel Network</h2>
+      <p class="section-body">We are actively expanding our national footprint by partnering with exceptional attorneys across the country. As an of-counsel partner, you gain access to our infrastructure, referral network, and the prestige of a growing multi-state platform — while maintaining your independence.</p>
+      <ul class="benefits-list">
+        <li>Referral fee arrangements on qualified matters</li>
+        <li>Access to firm resources and support staff</li>
+        <li>Cross-state collaboration opportunities</li>
+        <li>Marketing and brand association</li>
+        <li>Flexible subscription-based engagement</li>
+        <li>Preferred case referrals in your jurisdiction</li>
+        <li>Co-counsel on complex multi-state cases</li>
+        <li>Nationwide expansion priority markets</li>
+      </ul>
+      <a href="#contact" class="btn-primary">Inquire About Of-Counsel Partnership</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <p class="section-eyebrow">Get In Touch</p>
+    <div class="gold-rule"></div>
+    <h2 class="section-title">Start With a Free Consultation</h2>
+    <div class="contact-grid">
+      <div class="contact-form">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your full name"/>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="mwolf@martinwolflaw.com"/>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(212) 608-1660"/>
+        </div>
+        <div class="form-group">
+          <label>State</label>
+          <select>
+            <option value="">Select your state</option>
+            <option>New York</option>
+            <option>New Jersey</option>
+            <option>Florida</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Practice Area</label>
+          <select>
+            <option value="">Select a practice area</option>
+            <option>Personal Injury</option>
+            <option>Trusts & Estates</option>
+            <option>Business & Corporate Law</option>
+            <option>Real Estate Law</option>
+            <option>Family Law</option>
+            <option>Criminal Defense</option>
+            <option>Of-Counsel Inquiry</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Brief Description</label>
+          <textarea rows="4" placeholder="Briefly describe your legal matter..."></textarea>
+        </div>
+        <button class="btn-primary" style="border: none; cursor: pointer; font-family: inherit; width: fit-content;">Submit Inquiry</button>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <p class="label">Manhattan Office</p>
+          <p>225 Broadway, Suite 3010<br/>New York, NY 10007<br/>
+          <a href="tel:+12126081660" style="color:var(--gold); text-decoration:none;">(212) 608-1660</a><br/>
+          <span style="font-size:0.82rem; color:var(--gray);">Fax: (718) 228-5607</span></p>
+        </div>
+        <div class="contact-info-item">
+          <p class="label">Brooklyn Office</p>
+          <p>2917 Avenue J, 2nd Floor<br/>Brooklyn, NY 11210<br/>
+          <a href="tel:+17184449653" style="color:var(--gold); text-decoration:none;">(718) 444-WOLF</a></p>
+        </div>
+        <div class="contact-info-item">
+          <p class="label">Email</p>
+          <p><a href="mailto:mwolf@martinwolflaw.com" style="color:var(--white); text-decoration:none;">mwolf@martinwolflaw.com</a></p>
+        </div>
+        <div class="contact-info-item">
+          <p class="label">Office Hours</p>
+          <p>Monday – Friday: 9:00 AM – 6:00 PM<br/>Emergency consultations available 24/7</p>
+        </div>
+        <div class="contact-info-item">
+          <p class="label">Jurisdictions</p>
+          <p>New York · New Jersey · Florida (Pending)<br/>Expanding Nationally</p>
+        </div>
+        <div class="contact-info-item">
+          <p class="label">Personal Injury</p>
+          <p>No fee unless we win.<br/>Free case evaluation — call or submit online.</p>
+        </div>
+        <div class="contact-info-item">
+          <p class="label">Of-Counsel Inquiries</p>
+          <p>Attorneys seeking partnership opportunities are encouraged to submit their inquiry through this form or contact us directly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="wolf-logo.png" alt="Wolf & Associates PLLC" style="height:80px; width:auto;"/>
+
+    <p style="font-size: 0.78rem; color: var(--gray);">
+      &copy; 2026 Wolf & Associates PLLC · <a href="#contact">Privacy Policy</a> · <a href="#contact">Disclaimer</a>
+    </p>
+
+    <p class="footer-disclaimer">
+      Attorney Advertising. Prior results do not guarantee a similar outcome. Wolf & Associates PLLC is licensed to practice law in New York, New Jersey, and Florida. The information on this website is for general informational purposes only and does not constitute legal advice.
+    </p>
+  </footer>
+
+</body>
+</html>
