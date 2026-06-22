@@ -659,7 +659,11 @@
       }
 
       .nav-links {
-        display: none;
+        display: none !important;
+      }
+
+      #navMenu.active {
+        display: flex !important;
       }
 
       nav {
@@ -668,13 +672,8 @@
       }
 
       .hero {
-        padding: 14rem 1.5rem 12rem;
-        min-height: 80vh;
-      }
-      
-      /* Show nav-links on desktop ONLY */
-      .nav-links {
-        display: none !important;
+        padding: 7rem 1.5rem 40rem;
+        min-height: 100vh;
       }
 
       section {
