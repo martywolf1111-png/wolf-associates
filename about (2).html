@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Wolf & Associates PLLC | Founded by Martin Wolf | NY · NJ</title>
+  <meta name="description" content="Learn about Wolf & Associates PLLC, founded by Martin Wolf. Premier law firm specializing in personal injury and real estate law across New York and New Jersey."/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --black: #0A0A0A; --gold: #C9A84C; --gold-light: #E8C96A; --white: #F8F6F0; --gray: #888880; --dark-gray: #1A1A1A; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.7; }
+    .logo-img { height: 72px; width: auto; object-fit: contain; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; margin-top: 30px; background: rgba(10,10,10,0.95); border-bottom: 1px solid rgba(201,168,76,0.2); backdrop-filter: blur(10px); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: var(--white); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--black) !important; padding: 0.55rem 1.4rem; font-weight: 600 !important; }
+    .page-hero { min-height: 50vh; display: flex; flex-direction: column; justify-content: center; padding: 10rem 4rem 5rem; background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%); border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .breadcrumb { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--gray); text-decoration: none; }
+    .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 600; line-height: 1.1; margin-bottom: 1.5rem; max-width: 700px; }
+    .page-hero h1 em { font-style: italic; color: var(--gold); }
+    .page-hero p { color: var(--gray); max-width: 580px; font-size: 1rem; line-height: 1.8; }
+    section { padding: 5rem 4rem; }
+    .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 500; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 600; line-height: 1.15; margin-bottom: 1.5rem; }
+    .gold-rule { width: 60px; height: 2px; background: var(--gold); margin-bottom: 2rem; }
+    .section-body { color: var(--gray); max-width: 680px; line-height: 1.9; }
+    .content-block { margin-bottom: 3rem; }
+    .content-block h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem; color: var(--white); }
+    .content-block p { color: var(--gray); line-height: 1.9; margin-bottom: 1rem; }
+    .achievements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .achievement-card { background: var(--dark-gray); border-left: 4px solid var(--gold); padding: 2rem; }
+    .achievement-card h4 { color: var(--gold); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
+    .achievement-card p { font-size: 0.9rem; color: var(--gray); }
+    .cta-section { background: var(--dark-gray); border-top: 1px solid rgba(201,168,76,0.15); text-align: center; }
+    .btn-primary { background: var(--gold); color: var(--black); padding: 1rem 2.5rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.3s; }
+    .btn-primary:hover { background: var(--gold-light); }
+    footer { background: var(--black); border-top: 1px solid rgba(201,168,76,0.15); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    footer p { font-size: 0.75rem; color: var(--gray); }
+    footer a { color: var(--gold); text-decoration: none; }
+    .footer-disclaimer { font-size: 0.68rem; color: rgba(136,136,128,0.6); max-width: 600px; line-height: 1.6; margin-top: 1rem; width: 100%; }
+    @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .page-hero { padding: 7rem 1.5rem 3rem; } section { padding: 3rem 1.5rem; } footer { padding: 2rem 1.5rem; flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <!-- PHONE STRIP -->
+  <div style="background:var(--gold); color:var(--black); text-align:center; padding:0.4rem 1rem; font-family:Inter,sans-serif; font-size:0.78rem; font-weight:600; letter-spacing:0.08em; position:fixed; top:0; left:0; right:0; z-index:200;">
+    📞 &nbsp;<strong>Manhattan:</strong> <a href="tel:+12126081660" style="color:var(--black); text-decoration:none;">(212) 608-1660</a> &nbsp;·&nbsp; 225 Broadway, Suite 3010, New York, NY 10007 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Brooklyn:</strong> <a href="tel:+17184449653" style="color:var(--black); text-decoration:none;">(718) 444-WOLF</a> &nbsp;·&nbsp; 2917 Avenue J, 2nd Floor, Brooklyn, NY 11210 &nbsp;&nbsp;|&nbsp;&nbsp; <a href="mailto:mwolf@martinwolflaw.com" style="color:var(--black); text-decoration:none;">mwolf@martinwolflaw.com</a>
+  </div>
+
+<nav>
+  <a href="index.html"><img src="wolf-logo.png" alt="Wolf & Associates PLLC" class="logo-img"/></a>
+  <ul class="nav-links">
+    <li><a href="personal-injury.html">Personal Injury</a></li>
+    <li><a href="trusts-estates.html">Trusts & Estates</a></li>
+    <li><a href="corporate.html">Corporate</a></li>
+    <li><a href="real-estate.html">Real Estate</a></li>
+    <li><a href="case-results.html">Case Results</a></li>
+    <li><a href="about.html" style="color:var(--gold)">About</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Consultation</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 100%), url('martin-wolf-headshot.png') center/cover no-repeat; display: flex; align-items: center; justify-content: flex-end; padding-right: 8rem;">
+  <div style="max-width: 600px;">
+    <p class="breadcrumb" style="text-align: right; color: var(--gold);">Founding Attorney</p>
+    <h1 style="text-align: right; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem;">Martin Wolf,<br/><em style="font-style: italic; color: var(--gold);">Esq.</em></h1>
+    <p style="color: #E8C96A; text-align: right; font-size: 1.1rem; margin-bottom: 2rem; font-weight: 300;">Experienced & Trusted Legal Representation</p>
+    <div style="text-align: right;">
+      <a href="#contact" class="btn-primary" style="display: inline-block;">Schedule a Consultation</a>
+    </div>
+  </div>
+</div>
+
+<section style="background: var(--dark-gray);">
+  <p class="section-eyebrow" style="text-align:center;">The Founder</p>
+  <div class="gold-rule" style="margin-left: auto; margin-right: auto;"></div>
+  <h2 class="section-title" style="text-align:center;">About Martin Wolf</h2>
+  
+  <div class="content-block" style="max-width: 700px; margin: 0 auto; text-align: center;">
+    <p style="font-size: 1.05rem; color: var(--gray); margin-bottom: 1.5rem;">Martin Wolf, Esq. is the founder and principal attorney of Wolf & Associates PLLC. With decades of experience in litigation and transactional law, Martin has built his firm on the principles of client advocacy, professional excellence, and unwavering commitment to achieving the best possible outcomes for those he represents.</p>
+    
+    <p style="color: var(--gray); margin-bottom: 1.5rem;">A tireless advocate for his clients, Martin specializes in complex personal injury cases, real estate transactions, and business matters. His dedication to understanding each client's unique circumstances and goals has resulted in consistently favorable outcomes and a reputation for aggressive, effective legal representation.</p>
+    
+    <p style="color: var(--gray);">When Martin is not fighting for his clients, he is actively involved in the legal community, mentoring young attorneys and contributing to the advancement of legal practice standards. His commitment to excellence extends beyond the courtroom to every aspect of client service.</p>
+  </div>
+</section>
+
+<section>
+  <p class="section-eyebrow">Our Firm</p>
+  <div class="gold-rule"></div>
+  <h2 class="section-title">The Story of Wolf & Associates PLLC</h2>
+  
+  <div class="content-block">
+    <h3>Founded on Principle</h3>
+    <p>Wolf & Associates, PLLC was founded by Martin Wolf on a philosophy of legal practice that champions dedication to client service, professional excellence, compassion, integrity, and reliability. We offer clients aggressive and effective legal representation and high-quality professional service in a variety of legal arenas, with a focus on Plaintiff's Personal Injury Law and Real Estate Law.</p>
+  </div>
+
+  <div class="content-block">
+    <h3>Built on Experience</h3>
+    <p>Our law firm is the product of attorneys with experience, energy, edification and corresponding philosophies of legal practice, joining forces to provide premier legal services to clients throughout New York and New Jersey. The firm's legal team has a proven track record of success, with many satisfied clients and complex damage cases resolved favorably.</p>
+  </div>
+
+  <div class="content-block">
+    <h3>Personalized Attention</h3>
+    <p>The attorneys at Wolf & Associates provide personal attention tailored to the needs of our clients. We understand that every case is different and thus will assess your unique needs and the outcome you seek to obtain. Upon consulting with our firm, you will find that our law firm will provide you with immediate valuable legal advice. We'll also work diligently to plan, strategize and perform the necessary legal research to develop the practical and most advantageous resolution for your particular legal matter.</p>
+    <p>Throughout the duration of your case, our office will work hard to always be available to answer your questions and concerns, no matter how complex they may be.</p>
+  </div>
+</section>
+
+<section style="background: var(--dark-gray);">
+  <p class="section-eyebrow" style="text-align:center;">Areas of Excellence</p>
+  <div class="gold-rule" style="margin-left: auto; margin-right: auto; width: 60px;"></div>
+  <h2 class="section-title" style="text-align:center;">What We Handle</h2>
+  
+  <div class="content-block" style="max-width: 100%; text-align: center; margin-bottom: 0;">
+    <h3 style="text-align:center; margin-bottom: 2rem;">Complex Damage Cases</h3>
+    <p style="text-align:center; margin-left: auto; margin-right: auto;">The firm's attorneys pride themselves on years of dedication to the handling of complex damage cases, including catastrophic personal injury and claims of wrongful death arising out of auto accidents, medical negligence, products liability, dangerous drugs, premises liability, police misconduct & construction accidents.</p>
+  </div>
+
+  <div class="content-block" style="max-width: 100%; text-align: center;">
+    <h3 style="text-align:center; margin-bottom: 2rem;">Diverse Legal Services</h3>
+    <p style="text-align:center; margin-left: auto; margin-right: auto;">As part of our dedication of client service, our dynamic partners and associates offer quality legal services in other general areas of law including Social Security Disability, Real Estate, Divorce/Family Law, Business Law, Banking, Financing & Secured Transactions, Wills, Trusts & Estates, Bankruptcy (Chapter 7, 11 & 13) and Foreclosure Defense. Our network of associated attorneys can also handle your basic to complex immigration matters, workers' compensation issues, and criminal defense litigation.</p>
+  </div>
+</section>
+
+<section>
+  <p class="section-eyebrow">Recognition & Awards</p>
+  <div class="gold-rule"></div>
+  <h2 class="section-title">Industry Leadership</h2>
+  <p class="section-body" style="margin-bottom: 3rem;">Our attorneys are rated among the most prestigious in the industry, earning coveted awards and ratings for excellence in legal practice and client representation.</p>
+  
+  <div class="achievements-grid">
+    <div class="achievement-card">
+      <h4>🏆 Best Lawyers in America</h4>
+      <p>Recognized for outstanding legal practice and client service excellence.</p>
+    </div>
+    <div class="achievement-card">
+      <h4>💎 Million Dollar Advocate</h4>
+      <p>Award for exceptional results in high-value personal injury cases.</p>
+    </div>
+    <div class="achievement-card">
+      <h4>⭐ SuperLawyers</h4>
+      <p>Named among the top attorneys in personal injury and litigation practice.</p>
+    </div>
+    <div class="achievement-card">
+      <h4>🎖️ Lawyers of Distinction</h4>
+      <p>Recognition for professional excellence and integrity in legal practice.</p>
+    </div>
+    <div class="achievement-card">
+      <h4>🥇 America's Most Honored Professionals</h4>
+      <p>Top 5% recognition for commitment to client success and legal excellence.</p>
+    </div>
+    <div class="achievement-card">
+      <h4>🏅 Top 10 Under 40</h4>
+      <p>Nationally ranked by the National Academy of Personal Injury Attorneys.</p>
+    </div>
+    <div class="achievement-card">
+      <h4>⚖️ 10 Best American Institute</h4>
+      <p>Personal Injury Attorneys award for dedicated representation and results.</p>
+    </div>
+    <div class="achievement-card">
+      <h4>📜 Top 100 Trial Lawyers</h4>
+      <p>Recognition for outstanding trial advocacy and litigation success.</p>
+    </div>
+    <div class="achievement-card">
+      <h4>🗽 New York's Top 10 Attorneys</h4>
+      <p>Named by Attorney and Practice Magazine for regional excellence.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <p class="section-eyebrow" style="text-align:center;">Ready to Get Help</p>
+  <h2 class="section-title" style="text-align:center; margin: 0 auto 1rem;">Let Our Experience<br/>Work <em>For You.</em></h2>
+  <p style="color:var(--gray); text-align:center; margin-bottom:2.5rem; max-width:500px; margin-left:auto; margin-right:auto;">We urge you to contact us to find out how our firm can assist you with any of your legal needs. Your consultation is free, and we're ready to fight for your rights.</p>
+  <a href="index.html#contact" class="btn-primary">Schedule Your Free Consultation</a>
+</section>
+
+<footer>
+  <a href="index.html"><img src="wolf-logo.png" alt="Wolf & Associates PLLC" style="height:70px; width:auto;"/></a>
+  <div style="font-size:0.78rem; color:var(--gray);">
+    <p style="margin-bottom:0.3rem;"><strong style="color:var(--gold);">Manhattan:</strong> 225 Broadway, Suite 3010, New York, NY 10007 &nbsp;·&nbsp; <a href="tel:+12126081660" style="color:var(--gold);">(212) 608-1660</a> &nbsp;·&nbsp; Fax: (718) 228-5607</p>
+    <p style="margin-bottom:0.3rem;"><strong style="color:var(--gold);">Brooklyn:</strong> 2917 Avenue J, 2nd Floor, Brooklyn, NY 11210 &nbsp;·&nbsp; <a href="tel:+17184449653" style="color:var(--gold);">(718) 444-WOLF</a></p>
+    <p>&copy; 2026 Wolf &amp; Associates PLLC &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Disclaimer</a></p>
+  </div>
+  <p class="footer-disclaimer">Attorney Advertising. Prior results do not guarantee a similar outcome. Wolf & Associates PLLC is licensed to practice law in New York, New Jersey, and Florida. The information on this website is for general informational purposes only and does not constitute legal advice.</p>
+</footer>
+
+</body>
+</html>
