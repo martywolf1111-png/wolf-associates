@@ -42,7 +42,13 @@
     footer p { font-size: 0.75rem; color: var(--gray); }
     footer a { color: var(--gold); text-decoration: none; }
     .footer-disclaimer { font-size: 0.68rem; color: rgba(136,136,128,0.6); max-width: 600px; line-height: 1.6; margin-top: 1rem; width: 100%; }
-    @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .page-hero { padding: 7rem 1.5rem 3rem; } section { padding: 3rem 1.5rem; } footer { padding: 2rem 1.5rem; flex-direction: column; } }
+    @media (max-width: 900px) { 
+      nav { padding: 1rem 1.5rem; } 
+      .nav-links { display: none; } 
+      .page-hero { padding: 7rem 1.5rem 3rem; background-size: contain !important; background-position: center bottom !important; min-height: 80vh; }
+      section { padding: 3rem 1.5rem; } 
+      footer { padding: 2rem 1.5rem; flex-direction: column; } 
+    }
   </style>
 </head>
 <body>
@@ -64,7 +70,7 @@
   </ul>
 </nav>
 
-<div class="page-hero" style="background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 100%), url('martin-wolf-headshot.png') left bottom/cover no-repeat; display: flex; align-items: center; justify-content: flex-end; padding-right: 8rem; padding-top: 0; min-height: 100vh;">
+<div class="page-hero" style="background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 100%), url('martin-wolf-headshot.png') left bottom/contain no-repeat; display: flex; align-items: center; justify-content: flex-end; padding-right: 8rem; padding-top: 0; min-height: 100vh;">
   <div style="max-width: 600px;">
     <p class="breadcrumb" style="text-align: right; color: var(--gold);">Founding Attorney</p>
     <h1 style="text-align: right; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; line-height: 1.2;">Martin Wolf, <em style="font-style: italic; color: var(--gold);">Esq.</em></h1>
