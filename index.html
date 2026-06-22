@@ -568,12 +568,15 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-      .hamburger { display: flex; }
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 90px; left: 0; right: 0; background: rgba(10,10,10,0.98); padding: 2rem 1.5rem; gap: 1.5rem; width: 100%; z-index: 99; }
-      .nav-links.active { display: flex; }
+      nav { padding: 1rem 1.5rem; display: flex !important; justify-content: space-between; align-items: center; margin-top: 30px; }
+      .hamburger { display: flex !important; }
+      .logo-img { height: 50px; }
+      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 120px; left: 0; right: 0; background: rgba(10,10,10,0.99); padding: 2rem 1.5rem; gap: 1rem; width: 100%; z-index: 99; }
+      .nav-links.active { display: flex !important; }
       .nav-links li { width: 100%; }
-      .nav-links a { display: block; padding: 1rem; border-bottom: 1px solid rgba(201,168,76,0.2); }
+      .nav-links a { display: block; padding: 1rem 0; color: var(--white); border-bottom: 1px solid rgba(201,168,76,0.2); }
+      .nav-links a:last-child { border-bottom: none; }
+      .nav-cta { width: 100%; text-align: center; background: var(--gold) !important; padding: 1rem !important; margin-top: 1rem; }
       .hero { padding: 7rem 1.5rem 3rem; }
       section { padding: 4rem 1.5rem; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
