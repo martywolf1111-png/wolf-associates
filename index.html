@@ -534,8 +534,16 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
+      nav { padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100px; left: 0; right: 0; background: rgba(10,10,10,0.98); padding: 2rem 1.5rem; gap: 1.5rem; width: 100%; z-index: 99; }
+      .nav-links.active { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 1rem; border-bottom: 1px solid rgba(201,168,76,0.2); }
+      .hamburger { display: flex; width: 30px; height: 20px; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0; z-index: 101; }
+      .hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(12px); }
+      .hamburger.active span:nth-child(2) { opacity: 0; }
+      .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-12px); }
+      .hamburger span { display: block; width: 100%; height: 3px; background: var(--gold); transition: all 0.3s; }
       .hero { padding: 7rem 1.5rem 3rem; }
       section { padding: 4rem 1.5rem; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -557,7 +565,7 @@
   <nav>
     <img src="wolf-logo.png" alt="Wolf & Associates PLLC" class="logo-img"/>
 
-    <ul class="nav-links">
+    <ul class="nav-links" id="navMenu">
       <li><a href="personal-injury.html">Personal Injury</a></li>
       <li><a href="trusts-estates.html">Trusts & Estates</a></li>
       <li><a href="corporate.html">Corporate</a></li>
@@ -566,6 +574,12 @@
       <li><a href="about.html">About</a></li>
       <li><a href="#contact" class="nav-cta">Free Consultation</a></li>
     </ul>
+
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -849,7 +863,26 @@
   </footer>
 
   <script>
-    // Mobile video autoplay handling
+    // Mobile hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    if (hamburger) {
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close menu when a link is clicked
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    }
+
+    // Video playback
     const video = document.querySelector('.hero-video');
     const playBtn = document.getElementById('videoPlayBtn');
 
