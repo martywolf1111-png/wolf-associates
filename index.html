@@ -690,10 +690,10 @@
   </style>
 </head>
 <body>
-  <!-- PHONE STRIP -->
-  <div style="background:var(--gold); color:var(--black); text-align:center; padding:0.4rem 1rem; font-family:Inter,sans-serif; font-size:0.78rem; font-weight:600; letter-spacing:0.08em; position:fixed; top:0; left:0; right:0; z-index:200;">
-    📞 &nbsp;<strong>Manhattan:</strong> <a href="tel:+12126081660" style="color:var(--black); text-decoration:none;">(212) 608-1660</a> &nbsp;·&nbsp; 225 Broadway, Suite 3010, New York, NY 10007 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Brooklyn:</strong> <a href="tel:+17184449653" style="color:var(--black); text-decoration:none;">(718) 444-WOLF</a> &nbsp;·&nbsp; 2917 Avenue J, 2nd Floor, Brooklyn, NY 11210 &nbsp;&nbsp;|&nbsp;&nbsp; <a href="mailto:mwolf@martinwolflaw.com" style="color:var(--black); text-decoration:none;">mwolf@martinwolflaw.com</a>
-  </div>
+  <!-- CALL NOW BUTTON -->
+  <a href="tel:+12126081660" style="position: fixed; top: 100px; right: 20px; background: var(--gold); color: #000; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; z-index: 199; box-shadow: 0 4px 15px rgba(201,168,76,0.3); transition: all 0.3s; display: flex; align-items: center; gap: 8px;">
+    📞 CALL NOW
+  </a>
 
 
   <!-- NAV -->
@@ -904,22 +904,22 @@
     <div class="gold-rule"></div>
     <h2 class="section-title">Start With a Free Consultation</h2>
     <div class="contact-grid">
-      <div class="contact-form">
+      <form class="contact-form" action="https://formspree.io/f/mojoqraz" method="POST">
         <div class="form-group">
           <label>Full Name</label>
-          <input type="text" placeholder="Your full name"/>
+          <input type="text" name="name" placeholder="Your full name" required/>
         </div>
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="mwolf@martinwolflaw.com"/>
+          <input type="email" name="email" placeholder="your@email.com" required/>
         </div>
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" placeholder="(212) 608-1660"/>
+          <input type="tel" name="phone" placeholder="(212) 608-1660"/>
         </div>
         <div class="form-group">
           <label>State</label>
-          <select>
+          <select name="state">
             <option value="">Select your state</option>
             <option>New York</option>
             <option>New Jersey</option>
@@ -929,7 +929,7 @@
         </div>
         <div class="form-group">
           <label>Practice Area</label>
-          <select>
+          <select name="practice_area">
             <option value="">Select a practice area</option>
             <option>Personal Injury</option>
             <option>Trusts & Estates</option>
@@ -943,10 +943,10 @@
         </div>
         <div class="form-group">
           <label>Brief Description</label>
-          <textarea rows="4" placeholder="Briefly describe your legal matter..."></textarea>
+          <textarea rows="4" name="message" placeholder="Briefly describe your legal matter..." required></textarea>
         </div>
-        <button class="btn-primary" style="border: none; cursor: pointer; font-family: inherit; width: fit-content;">Submit Inquiry</button>
-      </div>
+        <button type="submit" class="btn-primary" style="border: none; cursor: pointer; font-family: inherit; width: fit-content;">Submit Inquiry</button>
+      </form>
 
       <div class="contact-info">
         <div class="contact-info-item">
@@ -988,13 +988,27 @@
   <footer>
     <img src="wolf-logo.png" alt="Wolf & Associates PLLC" style="height:80px; width:auto;"/>
 
-    <p style="font-size: 0.78rem; color: var(--gray);">
-      &copy; 2026 Wolf & Associates PLLC · <a href="#contact">Privacy Policy</a> · <a href="#contact">Disclaimer</a>
-    </p>
+    <div style="flex: 1; margin: 0 2rem;">
+      <p style="font-size: 0.85rem; font-weight: 600; color: var(--gold); margin-bottom: 1rem;">OFFICE LOCATIONS</p>
+      <p style="font-size: 0.78rem; color: var(--gray); margin-bottom: 1.5rem;">
+        <strong>Manhattan:</strong> 225 Broadway, Suite 3010, New York, NY 10007 · (212) 608-1660
+      </p>
+      <p style="font-size: 0.78rem; color: var(--gray); margin-bottom: 1.5rem;">
+        <strong>Brooklyn:</strong> 2917 Avenue J, 2nd Floor, Brooklyn, NY 11210 · (718) 444-WOLF
+      </p>
+      <p style="font-size: 0.78rem; color: var(--gray);">
+        <strong>Email:</strong> <a href="mailto:mwolf@martinwolflaw.com" style="color: var(--gold); text-decoration: none;">mwolf@martinwolflaw.com</a>
+      </p>
+    </div>
 
-    <p class="footer-disclaimer">
-      Attorney Advertising. Prior results do not guarantee a similar outcome. Wolf & Associates PLLC is licensed to practice law in New York, New Jersey, and Florida. The information on this website is for general informational purposes only and does not constitute legal advice.
-    </p>
+    <div style="text-align: right;">
+      <p style="font-size: 0.78rem; color: var(--gray); margin-bottom: 1rem;">
+        &copy; 2026 Wolf & Associates PLLC · <a href="#" style="color: var(--gold); text-decoration: none;">Privacy Policy</a> · <a href="#" style="color: var(--gold); text-decoration: none;">Disclaimer</a>
+      </p>
+      <p class="footer-disclaimer">
+        Attorney Advertising. Prior results do not guarantee a similar outcome. Wolf & Associates PLLC is licensed to practice law in New York, New Jersey, and Florida. The information on this website is for general informational purposes only and does not constitute legal advice.
+      </p>
+    </div>
   </footer>
 
   <script>
