@@ -119,49 +119,64 @@
       .hamburger {
         display: none !important;
       }
-    } 
+    }
+
+    @media (max-width: 900px) {
       /* Hide phone strip on mobile */
-      div[style*="background:var(--gold)"][style*="position:fixed"] {
-        display: none !important;
-      }
-      
-      nav { padding: 1rem 1.5rem; margin-top: 0; } 
-      .nav-links { display: none; } 
+      #phone-strip { display: none !important; }
+
+      nav { padding: 1rem 1.5rem; margin-top: 0; }
+      .nav-links { display: none; }
       .hamburger { display: flex; z-index: 201; }
-      
-      .page-hero { 
-        padding: 6rem 1.5rem 3rem; 
-        background-size: contain !important; 
-        background-position: center bottom !important; 
-        min-height: 70vh;
-        align-items: flex-start;
-        justify-content: flex-start;
+
+      /* Stack hero: TEXT on top, PHOTO below — text no longer overlays the image */
+      .page-hero {
+        background-image: none !important;   /* strip the photo off the hero background */
+        background: var(--black) !important;
+        min-height: auto !important;
+        padding: 6rem 1.5rem 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
       }
-      
+
       .page-hero > div {
+        max-width: 100% !important;
+        width: 100% !important;
         text-align: left !important;
+        order: 1;                            /* text block first */
+        margin-bottom: 1.5rem;
       }
-      
-      .page-hero h1 {
-        text-align: left !important;
+      .page-hero .breadcrumb,
+      .page-hero h1,
+      .page-hero p { text-align: left !important; }
+
+      /* Photo becomes its own block UNDER the text */
+      .page-hero::after {
+        content: "";
+        order: 2;
+        display: block;
+        width: 100%;
+        height: 55vh;
+        background: url('martin-wolf-headshot.png') center top / cover no-repeat;
       }
-      
+
+      /* Consultation button: smaller, top-CENTER so it clears the hamburger */
       .page-hero .btn-primary {
         position: fixed;
-        top: 70px;
-        right: 20px;
-        padding: 0.5rem 0.8rem !important;
-        font-size: 0.65rem !important;
+        top: 16px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        padding: 0.5rem 1rem !important;
+        font-size: 0.68rem !important;
         z-index: 150;
         white-space: nowrap;
       }
-      
-      .page-hero p {
-        text-align: left !important;
-      }
-      
-      section { padding: 3rem 1.5rem; } 
-      footer { padding: 2rem 1.5rem; flex-direction: column; } 
+
+      section { padding: 3rem 1.5rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
     }
   </style>
 </head>
