@@ -51,6 +51,17 @@
       display: flex;
       gap: 2.5rem;
       list-style: none;
+      z-index: 50;
+    }
+
+    @media (min-width: 901px) {
+      .nav-links {
+        display: flex !important;
+      }
+
+      .hamburger {
+        display: none !important;
+      }
     }
 
     .nav-links a {
@@ -657,8 +668,13 @@
       }
 
       .hero {
-        padding: 12rem 1.5rem 8rem;
-        min-height: 70vh;
+        padding: 14rem 1.5rem 12rem;
+        min-height: 80vh;
+      }
+      
+      /* Show nav-links on desktop ONLY */
+      .nav-links {
+        display: none !important;
       }
 
       section {
